@@ -11,10 +11,10 @@ class Circle:
     MIN_RADIUS = 1
     MAX_RADIUS = 1000
     @classmethod
-    def is_valid_radius(cls, r = int):
+    def is_valid_radius(cls, r : int):
         return  cls.MIN_RADIUS <= r <= cls.MAX_RADIUS
-round = Circle()
-print(round.is_valid_radius(1500))
+circle = Circle()
+print(circle.is_valid_radius(1500))
 
 
 """
@@ -39,7 +39,7 @@ class Circle:
     def area(radius):
         return  math.pi* radius ** 2
     def __init__(self, radius):
-        if self.is_valid_radius(radius) == True:
+        if self.is_valid_radius(radius):
             self.radius = radius
 
 
@@ -140,7 +140,7 @@ class User():
         return(self.__login, self.__password)
 
     def check_password(self, password):
-        return self.__password == password
+        return self.__password == self.__encrypt_password(password)
 
 
 
@@ -160,5 +160,5 @@ print(u.get_credentials())
 # a = u.__encrypt_password("fvverv") - не работает тк python "видит" этот метод как "_User__encrypt_password"
 a = u._User__encrypt_password("fvverv")
 print(a)
-
 print(u._User__login)
+# print(u.__password)

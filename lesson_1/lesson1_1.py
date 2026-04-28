@@ -11,10 +11,10 @@
 class Dog:
     species = "canis"
     legs = 4
-Mike = Dog()
-Bobik = Dog()
+mike = Dog()
+bobik = Dog()
 
-Mike.legs = 2
+mike.legs = 2
 
 print("колличество ног у Майка:", Mike.legs)
 print(Mike.legs)
@@ -26,7 +26,7 @@ print(Mike.__dict__)
 а затем удали name.
 Проверь, что произойдёт при попытке снова вывести объект.name."""
 class Dog:
-    "Описание собочьих особенностей"
+    """Описание собочьих особенностей"""
     species = "canis"
     legs = 4
 spits = Dog()

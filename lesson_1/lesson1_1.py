@@ -12,7 +12,7 @@ class Dog:
     species = "canis"
     legs = 4
 mike = Dog()
-bobik = Dog()
+jim = Dog()
 
 mike.legs = 2
 

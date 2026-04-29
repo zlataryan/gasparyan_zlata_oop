@@ -78,13 +78,19 @@ del student
 Проверь работу с прямоугольником без аргументов и с заданной шириной и высотой.
 # ======================================"""
 class Rectangle:
-    length = 1
-    width = 1
+
+    def __init__(self, width=1, height=1):
+        self.width = width
+        self.height = height
     def area(self):
-        return self.length * self.width
+        return self.width * self.height
 a = Rectangle()
 print(a.area())
-
+a = Rectangle()
+assert a.area() == 1, "Нарушена работа без аргументов"
+a = Rectangle(2, 4)
+assert a.area() == 8, "Нарушена работа с аргументами"
+=======
 
 
 
@@ -94,12 +100,12 @@ print(a.area())
 ======================================
 """
 class Logger:
-    instanse = None
+    instance = None
     def __new__(cls):
         print("Создание логгера")
-        if cls.instanse == None:
-            cls.instanse = super().__new__(cls)
-        return cls.instanse
+        if cls.instance == None:
+            cls.instance = super().__new__(cls)
+        return cls.instance
     def __init__(self):
         self.zn = []
         print("Инициализация логгера")
